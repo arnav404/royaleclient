@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4743B49C23FAF810006D60DA /* OptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4743B49B23FAF810006D60DA /* OptionButton.swift */; };
+		4743B49E23FB01A8006D60DA /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4743B49D23FB01A8006D60DA /* TimerView.swift */; };
+		4743B4A423FB214D006D60DA /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4743B4A323FB214D006D60DA /* HomeScreen.swift */; };
+		4743B4A623FB21B3006D60DA /* CategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4743B4A523FB21B3006D60DA /* CategoryButton.swift */; };
 		47F7B15A23FA4CD000C37EBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F7B15923FA4CD000C37EBE /* AppDelegate.swift */; };
 		47F7B15C23FA4CD000C37EBE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F7B15B23FA4CD000C37EBE /* SceneDelegate.swift */; };
 		47F7B15E23FA4CD000C37EBE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F7B15D23FA4CD000C37EBE /* ContentView.swift */; };
@@ -35,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4743B49B23FAF810006D60DA /* OptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionButton.swift; sourceTree = "<group>"; };
+		4743B49D23FB01A8006D60DA /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		4743B4A323FB214D006D60DA /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		4743B4A523FB21B3006D60DA /* CategoryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButton.swift; sourceTree = "<group>"; };
 		47F7B15623FA4CD000C37EBE /* Royale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Royale.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47F7B15923FA4CD000C37EBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47F7B15B23FA4CD000C37EBE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +84,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4743B49A23FAF7AB006D60DA /* GameScreen */ = {
+			isa = PBXGroup;
+			children = (
+				47F7B15D23FA4CD000C37EBE /* ContentView.swift */,
+				4743B49B23FAF810006D60DA /* OptionButton.swift */,
+				4743B49D23FB01A8006D60DA /* TimerView.swift */,
+			);
+			path = GameScreen;
+			sourceTree = "<group>";
+		};
+		4743B49F23FB2106006D60DA /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				4743B4A323FB214D006D60DA /* HomeScreen.swift */,
+				4743B4A523FB21B3006D60DA /* CategoryButton.swift */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
 		47F7B14D23FA4CD000C37EBE = {
 			isa = PBXGroup;
 			children = (
@@ -99,9 +126,10 @@
 		47F7B15823FA4CD000C37EBE /* Royale */ = {
 			isa = PBXGroup;
 			children = (
+				4743B49F23FB2106006D60DA /* HomeScreen */,
 				47F7B15923FA4CD000C37EBE /* AppDelegate.swift */,
 				47F7B15B23FA4CD000C37EBE /* SceneDelegate.swift */,
-				47F7B15D23FA4CD000C37EBE /* ContentView.swift */,
+				4743B49A23FAF7AB006D60DA /* GameScreen */,
 				47F7B15F23FA4CD000C37EBE /* Assets.xcassets */,
 				47F7B16423FA4CD000C37EBE /* LaunchScreen.storyboard */,
 				47F7B16723FA4CD000C37EBE /* Info.plist */,
@@ -269,6 +297,10 @@
 			files = (
 				47F7B15A23FA4CD000C37EBE /* AppDelegate.swift in Sources */,
 				47F7B15C23FA4CD000C37EBE /* SceneDelegate.swift in Sources */,
+				4743B4A423FB214D006D60DA /* HomeScreen.swift in Sources */,
+				4743B49C23FAF810006D60DA /* OptionButton.swift in Sources */,
+				4743B4A623FB21B3006D60DA /* CategoryButton.swift in Sources */,
+				4743B49E23FB01A8006D60DA /* TimerView.swift in Sources */,
 				47F7B15E23FA4CD000C37EBE /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,6 +468,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Royale/Preview Content\"";
+				DEVELOPMENT_TEAM = FS585TKLVD;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Royale/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -455,6 +488,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Royale/Preview Content\"";
+				DEVELOPMENT_TEAM = FS585TKLVD;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Royale/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
