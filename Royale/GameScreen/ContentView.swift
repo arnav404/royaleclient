@@ -43,15 +43,20 @@ struct ContentView: View {
                             self.tl.currentTime = 16.0
                             if(self.gd.selectedAnswer == self.networkingManager.questionList.results[self.gd.questionNumber].correct_answer) {
                                     self.gd.colorIDs[self.gd.selectedButton] = 2
-                            } else {
+                            } else if(self.gd.selectedAnswer != ""){
                                 self.gd.colorIDs[self.gd.selectedButton] = 3
-                                self.gd.colorIDs[0] = 2
+                                self.gd.colorIDs[self.gd.correctButton] = 2
+                            } else {
+                                self.gd.colorIDs[self.gd.correctButton] = 2
                             }
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { // Change `2.0` to the desired number of seconds.
                                 // Code you want to be delayed
                                 self.gd.colorIDs = [0,0,0,0]
                                 self.gd.questionNumber+=1
+                                self.gd.selectedAnswer = ""
                                 self.gd.options = [self.networkingManager.questionList.results[self.gd.questionNumber].correct_answer, self.networkingManager.questionList.results[self.gd.questionNumber].incorrect_answers[0], self.networkingManager.questionList.results[self.gd.questionNumber].incorrect_answers[1], self.networkingManager.questionList.results[self.gd.questionNumber].incorrect_answers[2]]
+                                self.gd.options.shuffle()
+                                self.gd.correctButton = self.gd.options.firstIndex(of: self.networkingManager.questionList.results[self.gd.questionNumber].correct_answer)!
                             }
                         }
                     })

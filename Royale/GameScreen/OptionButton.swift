@@ -36,6 +36,11 @@ class GameData: ObservableObject {
             didChange.send(self)
         }
     }
+    @Published var correctButton = 0 {
+        didSet {
+            didChange.send(self)
+        }
+    }
 }
 
 struct OptionButton: View {
