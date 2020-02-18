@@ -10,6 +10,17 @@ import SwiftUI
 import UIKit
 
 struct ContentView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @State var showsAlert = false
+    @State var color = Color.purple
+    @State var networkingManager = NetworkingManager()
+    
+    var alert: Alert {
+        Alert(title: Text("Quit?"), message: Text("Are you sure you want to leave?"), primaryButton: .destructive(Text("Yes")) {
+                self.presentationMode.wrappedValue.dismiss()
+            }, secondaryButton: .default(Text("No")))
+    }
+    
     var body: some View {
         ZStack {
             
@@ -20,35 +31,44 @@ struct ContentView: View {
             VStack {
                 VStack {
                     
-                    TimerView()
+                    TimerView(color: self.color)
                     
                     Spacer()
                     
-                    Text("Who is the greatest quarterback of all time?").font(Font(UIFont(name: "Avenir", size: 30.0)!)).fontWeight(.bold).foregroundColor(Color.white).multilineTextAlignment(.center)
+                    Text(networkingManager.questionList.results[0].question).font(Font(UIFont(name: "Avenir", size: 20.0)!)).fontWeight(.bold).foregroundColor(Color.white).multilineTextAlignment(.center).padding(10.0)
                 }.frame(height: 225.0)
                 
                 Spacer()
             
                 VStack {
                     
-                    OptionButton(name: "Joe Montana")
+                    OptionButton(name: networkingManager.questionList.results[0].correct_answer)
                     
                     Spacer()
                     
-                    OptionButton(name: "Steve Young")
+                    OptionButton(name: networkingManager.questionList.results[0].incorrect_answers[0])
                     
                     Spacer()
                     
-                    OptionButton(name: "Jimmy Garoppolo")
+                    OptionButton(name: networkingManager.questionList.results[0].incorrect_answers[1])
                     
                     Spacer()
                     
-                    OptionButton(name: "All of the Above")
+                    OptionButton(name: networkingManager.questionList.results[0].incorrect_answers[2])
                 }
                 .frame(height: CGFloat(250.0))
-            }.frame(height: CGFloat(525.0))
-            
-        }
+            }.frame(height: CGFloat(525.0)).offset(x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/-50.0/*@END_MENU_TOKEN@*/)
+       
+            Button(action: {
+                self.showsAlert = true
+                       }) {
+                            Text("X").frame(width: 20.0, height: 20.0).padding(10.0)
+                                .accentColor(Color.white)
+                                .background(Color.red)
+                                
+            }.alert(isPresented: self.$showsAlert, content: { self.alert })
+            .clipShape(Circle()).frame(width: 40.0, height: 40.0).position(CGPoint(x:40.0, y:0.0))
+        }.navigationBarBackButtonHidden(true)
     }
 }
 

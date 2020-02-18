@@ -10,6 +10,7 @@ import SwiftUI
 
 struct TimerView: View {
     @State var currentTime = 16.0
+    @State var color = Color.purple
     
     let countdown = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
     
@@ -30,7 +31,7 @@ struct TimerView: View {
             .foregroundColor(Color.white)
             .padding(.all)
             .frame(width: 100.0, height: 100.0)
-            .background(Color.purple)
+            .background(self.color)
             .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
             .overlay(getPath())
     }

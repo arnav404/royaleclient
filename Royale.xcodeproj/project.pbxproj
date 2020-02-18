@@ -11,6 +11,8 @@
 		4743B49E23FB01A8006D60DA /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4743B49D23FB01A8006D60DA /* TimerView.swift */; };
 		4743B4A423FB214D006D60DA /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4743B4A323FB214D006D60DA /* HomeScreen.swift */; };
 		4743B4A623FB21B3006D60DA /* CategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4743B4A523FB21B3006D60DA /* CategoryButton.swift */; };
+		4743B4AA23FB8976006D60DA /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4743B4A923FB8976006D60DA /* Question.swift */; };
+		4743B4AC23FB8A19006D60DA /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4743B4AB23FB8A19006D60DA /* NetworkingManager.swift */; };
 		47F7B15A23FA4CD000C37EBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F7B15923FA4CD000C37EBE /* AppDelegate.swift */; };
 		47F7B15C23FA4CD000C37EBE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F7B15B23FA4CD000C37EBE /* SceneDelegate.swift */; };
 		47F7B15E23FA4CD000C37EBE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F7B15D23FA4CD000C37EBE /* ContentView.swift */; };
@@ -43,6 +45,8 @@
 		4743B49D23FB01A8006D60DA /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		4743B4A323FB214D006D60DA /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		4743B4A523FB21B3006D60DA /* CategoryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButton.swift; sourceTree = "<group>"; };
+		4743B4A923FB8976006D60DA /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		4743B4AB23FB8A19006D60DA /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		47F7B15623FA4CD000C37EBE /* Royale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Royale.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47F7B15923FA4CD000C37EBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47F7B15B23FA4CD000C37EBE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 				47F7B15D23FA4CD000C37EBE /* ContentView.swift */,
 				4743B49B23FAF810006D60DA /* OptionButton.swift */,
 				4743B49D23FB01A8006D60DA /* TimerView.swift */,
+				4743B4A923FB8976006D60DA /* Question.swift */,
+				4743B4AB23FB8A19006D60DA /* NetworkingManager.swift */,
 			);
 			path = GameScreen;
 			sourceTree = "<group>";
@@ -296,10 +302,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				47F7B15A23FA4CD000C37EBE /* AppDelegate.swift in Sources */,
+				4743B4AA23FB8976006D60DA /* Question.swift in Sources */,
 				47F7B15C23FA4CD000C37EBE /* SceneDelegate.swift in Sources */,
 				4743B4A423FB214D006D60DA /* HomeScreen.swift in Sources */,
 				4743B49C23FAF810006D60DA /* OptionButton.swift in Sources */,
 				4743B4A623FB21B3006D60DA /* CategoryButton.swift in Sources */,
+				4743B4AC23FB8A19006D60DA /* NetworkingManager.swift in Sources */,
 				4743B49E23FB01A8006D60DA /* TimerView.swift in Sources */,
 				47F7B15E23FA4CD000C37EBE /* ContentView.swift in Sources */,
 			);

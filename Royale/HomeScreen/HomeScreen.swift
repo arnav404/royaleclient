@@ -10,13 +10,14 @@ import SwiftUI
 
 struct HomeScreen: View {
     var body: some View {
+        NavigationView {
         ZStack {
             Color(UIColor(red: 49.0/255.0, green: 49.0/255.0, blue: 49.0/255.0, alpha: 1.0))
             .edgesIgnoringSafeArea(.all)
             
             VStack {
                 
-                Text("Play Royale")
+                Text("Trivia Royale")
                     .font(Font(UIFont(name: "Avenir", size: 50.0)!))
                     .fontWeight(.heavy)
                     .foregroundColor(Color.white)
@@ -45,8 +46,10 @@ struct HomeScreen: View {
                 .frame(height: 325.0)
                 
             }
-            .frame(height: 450.0)
+            .frame(height: 430.0)
+            .offset(x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/-50.0/*@END_MENU_TOKEN@*/)
             
+        }
         }
     }
 }
