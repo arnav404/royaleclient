@@ -13,7 +13,12 @@ struct ContentView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var showsAlert = false
     @State var color = Color.purple
-    @State var networkingManager = NetworkingManager()
+    @ObservedObject var networkingManager = NetworkingManager()
+    @ObservedObject var tl = TimeLeft()
+    @ObservedObject var gd = GameData()
+    @State var category = 21
+    
+    let countdown = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
     
     var alert: Alert {
         Alert(title: Text("Quit?"), message: Text("Are you sure you want to leave?"), primaryButton: .destructive(Text("Yes")) {
@@ -31,33 +36,51 @@ struct ContentView: View {
             VStack {
                 VStack {
                     
-                    TimerView(color: self.color)
+                    TimerView(color: self.color, tl: self.tl).onReceive(countdown, perform: { _ in
+                        if self.tl.currentTime > 1.0 {
+                            self.tl.currentTime -= 0.01
+                        } else {
+                            self.tl.currentTime = 16.0
+                            if(self.gd.selectedAnswer == self.networkingManager.questionList.results[self.gd.questionNumber].correct_answer) {
+                                    self.gd.colorIDs[self.gd.selectedButton] = 2
+                            } else {
+                                self.gd.colorIDs[self.gd.selectedButton] = 3
+                                self.gd.colorIDs[0] = 2
+                            }
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { // Change `2.0` to the desired number of seconds.
+                                // Code you want to be delayed
+                                self.gd.colorIDs = [0,0,0,0]
+                                self.gd.questionNumber+=1
+                                self.gd.options = [self.networkingManager.questionList.results[self.gd.questionNumber].correct_answer, self.networkingManager.questionList.results[self.gd.questionNumber].incorrect_answers[0], self.networkingManager.questionList.results[self.gd.questionNumber].incorrect_answers[1], self.networkingManager.questionList.results[self.gd.questionNumber].incorrect_answers[2]]
+                            }
+                        }
+                    })
                     
                     Spacer()
                     
-                    Text(networkingManager.questionList.results[0].question).font(Font(UIFont(name: "Avenir", size: 20.0)!)).fontWeight(.bold).foregroundColor(Color.white).multilineTextAlignment(.center).padding(10.0)
+                Text(networkingManager.questionList.results[self.gd.questionNumber].question).font(Font(UIFont(name: "Avenir", size: 20.0)!)).fontWeight(.bold).foregroundColor(Color.white).multilineTextAlignment(.center).padding(10.0)
                 }.frame(height: 225.0)
                 
                 Spacer()
             
                 VStack {
                     
-                    OptionButton(name: networkingManager.questionList.results[0].correct_answer)
+                    OptionButton(id: 0, gd: self.gd)
                     
                     Spacer()
                     
-                    OptionButton(name: networkingManager.questionList.results[0].incorrect_answers[0])
+                    OptionButton(id: 1, gd: self.gd)
                     
                     Spacer()
                     
-                    OptionButton(name: networkingManager.questionList.results[0].incorrect_answers[1])
+                    OptionButton(id: 2, gd: self.gd)
                     
                     Spacer()
                     
-                    OptionButton(name: networkingManager.questionList.results[0].incorrect_answers[2])
+                    OptionButton(id: 3, gd: self.gd)
                 }
                 .frame(height: CGFloat(250.0))
-            }.frame(height: CGFloat(525.0)).offset(x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/-50.0/*@END_MENU_TOKEN@*/)
+            }.frame(height: CGFloat(525.0)).offset(x: 0.0, y: -50.0)
        
             Button(action: {
                 self.showsAlert = true

@@ -12,7 +12,7 @@ import Combine
 
 class NetworkingManager : ObservableObject {
     
-    @State var category = 21
+    var category = 19
     
     var didChange = PassthroughSubject<NetworkingManager, Never>()
     var questionList = QuestionList(results: []) {
@@ -22,13 +22,13 @@ class NetworkingManager : ObservableObject {
     }
     
     init() {
-        guard let url = URL(string: "https://opentdb.com/api.php?amount=1&category=\(self.category)&type=multiple") else {return}
+        guard let url = URL(string: "https://opentdb.com/api.php?amount=20&category=\(self.category)&type=multiple") else {return}
         URLSession.shared.dataTask(with: url) {
             (data, _, _) in
             guard let data = data else {return}
             let questionList = try! JSONDecoder().decode(QuestionList.self, from: data)
             
-            print(questionList)
+            print(questionList.results[12])
             
             DispatchQueue.main.async {
                 self.questionList = questionList

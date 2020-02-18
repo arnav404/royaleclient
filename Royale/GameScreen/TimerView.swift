@@ -7,26 +7,29 @@
 //
 
 import SwiftUI
+import Combine
+
+class TimeLeft: ObservableObject {
+    var didChange = PassthroughSubject<TimeLeft, Never>()
+    @Published var currentTime = 0.0 {
+        didSet {
+            didChange.send(self)
+        }
+    }
+}
 
 struct TimerView: View {
-    @State var currentTime = 16.0
     @State var color = Color.purple
-    
-    let countdown = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
+    @ObservedObject var tl = TimeLeft()
     
     func getPath() -> Path {
         var p = Path()
-        p.addArc(center: CGPoint(x: 50, y:50), radius: 50.0, startAngle: .degrees(0), endAngle: .degrees(Double(15-self.currentTime+1)/15.0*360+0.01), clockwise: true)
+        p.addArc(center: CGPoint(x: 50, y:50), radius: 50.0, startAngle: .degrees(0), endAngle: .degrees(Double(15-self.tl.currentTime+1)/15.0*360+0.01), clockwise: true)
         return p.strokedPath(StrokeStyle(lineWidth: 8.0))
     }
     
     var body: some View {
-        Text("\(Int(currentTime))")
-            .onReceive(countdown, perform: { _ in
-                if self.currentTime > 1.0 {
-                    self.currentTime -= 0.01
-                }
-            })
+        Text("\(Int(tl.currentTime))")
             .font(.largeTitle)
             .foregroundColor(Color.white)
             .padding(.all)

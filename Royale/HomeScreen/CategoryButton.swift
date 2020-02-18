@@ -13,10 +13,10 @@ struct CategoryButton: View {
     @State var name = "Science"
     @State var bgColor = Color.pink
     @State var color = Color.pink
-    @State var category = 21
+    @State var category = 19
     
     var body: some View {
-        NavigationLink(destination: ContentView(color: self.bgColor)) {
+        NavigationLink(destination: ContentView(color: self.bgColor, category: self.category)) {
                 VStack {
                     Text(self.name).font(Font(UIFont(name: "Avenir", size: 20.0)!)).fontWeight(.black).foregroundColor(self.color)
                     Image(name)
