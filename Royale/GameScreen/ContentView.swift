@@ -17,14 +17,19 @@ struct ContentView: View {
     @ObservedObject var tl = TimeLeft()
     @ObservedObject var gd = GameData()
     @State var category = 21
+    @State var isOn = true
     
-    let countdown = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
+    @State var countdown = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
     
     var alert: Alert {
         Alert(title: Text("Quit?"), message: Text("Are you sure you want to leave?"), primaryButton: .destructive(Text("Yes")) {
                 self.presentationMode.wrappedValue.dismiss()
-            }, secondaryButton: .default(Text("No")))
+            }, secondaryButton: .default(Text("No")) {
+                self.isOn = true
+            })
     }
+    
+    
     
     var body: some View {
         ZStack {
@@ -38,9 +43,13 @@ struct ContentView: View {
                     
                     TimerView(color: self.color, tl: self.tl).onReceive(countdown, perform: { _ in
                         if self.tl.currentTime > 1.0 {
-                            self.tl.currentTime -= 0.01
+                            if(self.isOn) {
+                                self.tl.currentTime -= 0.01
+                            }
                         } else {
-                            self.tl.currentTime = 16.0
+                            self.tl.currentTime = 15.99
+                            self.gd.disabled = true
+                            self.isOn = false
                             if(self.gd.selectedAnswer == self.networkingManager.questionList.results[self.gd.questionNumber].correct_answer) {
                                     self.gd.colorIDs[self.gd.selectedButton] = 2
                             } else if(self.gd.selectedAnswer != ""){
@@ -51,8 +60,14 @@ struct ContentView: View {
                             }
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { // Change `2.0` to the desired number of seconds.
                                 // Code you want to be delayed
+                                self.isOn = true
+                                self.gd.disabled = false
                                 self.gd.colorIDs = [0,0,0,0]
                                 self.gd.questionNumber+=1
+                                if(self.gd.questionNumber == 5) {
+                                    self.networkingManager.loadQuestions()
+                                    self.gd.questionNumber = 0
+                                }
                                 self.gd.selectedAnswer = ""
                                 self.gd.options = [self.networkingManager.questionList.results[self.gd.questionNumber].correct_answer, self.networkingManager.questionList.results[self.gd.questionNumber].incorrect_answers[0], self.networkingManager.questionList.results[self.gd.questionNumber].incorrect_answers[1], self.networkingManager.questionList.results[self.gd.questionNumber].incorrect_answers[2]]
                                 self.gd.options.shuffle()
@@ -63,7 +78,8 @@ struct ContentView: View {
                     
                     Spacer()
                     
-                Text(networkingManager.questionList.results[self.gd.questionNumber].question).font(Font(UIFont(name: "Avenir", size: 20.0)!)).fontWeight(.bold).foregroundColor(Color.white).multilineTextAlignment(.center).padding(10.0)
+
+                    Text("\(self.gd.questionNumber) ) \(networkingManager.questionList.results[self.gd.questionNumber].question)").font(Font(UIFont(name: "Avenir", size: 20.0)!)).fontWeight(.bold).foregroundColor(Color.white).multilineTextAlignment(.center).padding(10.0)
                 }.frame(height: 225.0)
                 
                 Spacer()
@@ -88,6 +104,7 @@ struct ContentView: View {
             }.frame(height: CGFloat(525.0)).offset(x: 0.0, y: -50.0)
        
             Button(action: {
+                self.isOn = false
                 self.showsAlert = true
                        }) {
                             Text("X").frame(width: 20.0, height: 20.0).padding(10.0)
@@ -96,6 +113,16 @@ struct ContentView: View {
                                 
             }.alert(isPresented: self.$showsAlert, content: { self.alert })
             .clipShape(Circle()).frame(width: 40.0, height: 40.0).position(CGPoint(x:40.0, y:0.0))
+        }.onAppear {
+            self.networkingManager.category = self.category
+            self.countdown = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
+            self.isOn = true
+            self.tl.currentTime = 0.00
+            self.gd.colorIDs = [0,0,0,0]
+            self.gd.selectedAnswer = ""
+            self.gd.options = [self.networkingManager.questionList.results[self.gd.questionNumber].correct_answer, self.networkingManager.questionList.results[self.gd.questionNumber].incorrect_answers[0], self.networkingManager.questionList.results[self.gd.questionNumber].incorrect_answers[1], self.networkingManager.questionList.results[self.gd.questionNumber].incorrect_answers[2]]
+            self.gd.options.shuffle()
+            self.gd.correctButton = self.gd.options.firstIndex(of: self.networkingManager.questionList.results[self.gd.questionNumber].correct_answer)!
         }.navigationBarBackButtonHidden(true)
     }
 }

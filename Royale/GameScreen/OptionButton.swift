@@ -10,37 +10,14 @@ import SwiftUI
 import Combine
 
 class GameData: ObservableObject {
-    var didChange = PassthroughSubject<GameData, Never>()
-    @Published var colorIDs = [0,0,0,0] {
-        didSet {
-            didChange.send(self)
-        }
-    }
-    @Published var options = ["", "", "", ""] {
-        didSet {
-            didChange.send(self)
-        }
-    }
-    @Published var questionNumber = 1 {
-        didSet {
-            didChange.send(self)
-        }
-    }
-    @Published var selectedButton = 1 {
-        didSet {
-            didChange.send(self)
-        }
-    }
-    @Published var selectedAnswer = "" {
-        didSet {
-            didChange.send(self)
-        }
-    }
-    @Published var correctButton = 0 {
-        didSet {
-            didChange.send(self)
-        }
-    }
+    @Published var colorIDs = [0,0,0,0]
+    @Published var options = ["", "", "", ""]
+    @Published var questionNumber = 0
+    @Published var selectedButton = 1
+    @Published var selectedAnswer = ""
+    @Published var correctButton = 0
+    @Published var disabled = false
+    @Published var ticker = 0
 }
 
 struct OptionButton: View {
@@ -66,7 +43,7 @@ struct OptionButton: View {
                 .accentColor(self.colors[self.gd.colorIDs[id]])
                 .cornerRadius(10)
                 .shadow(radius: /*@START_MENU_TOKEN@*/3/*@END_MENU_TOKEN@*/)
-        }        
+        }.disabled(self.gd.disabled)
     }
 }
 
