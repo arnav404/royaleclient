@@ -27,7 +27,7 @@ class NetworkingManager : ObservableObject {
     }
     
     func loadQuestions() {
-        guard let url = URL(string: "https://opentdb.com/api.php?amount=5&category=\(self.category)&type=multiple") else {return}
+        guard let url = URL(string: "https://opentdb.com/api.php?amount=50&category=\(self.category)&type=multiple") else {return}
         URLSession.shared.dataTask(with: url) {
             (data, _, _) in
             guard let data = data else {return}

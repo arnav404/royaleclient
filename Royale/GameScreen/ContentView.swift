@@ -64,7 +64,7 @@ struct ContentView: View {
                                 self.gd.disabled = false
                                 self.gd.colorIDs = [0,0,0,0]
                                 self.gd.questionNumber+=1
-                                if(self.gd.questionNumber == 5) {
+                                if(self.gd.questionNumber == 50) {
                                     self.networkingManager.loadQuestions()
                                     self.gd.questionNumber = 0
                                 }

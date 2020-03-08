@@ -53,6 +53,10 @@ struct Lobby: View {
                 print("THING: \(data[0])")
                 self.gd.ticker = (data[0] as! Array<Any>)[0] as! Int
             }
+            self.manager.socket(forNamespace: "/\(self.category)").on("transition") { (data, _) in
+                print("THING: \(data[0])")
+                self.gd.ticker = (data[0] as! Array<Any>)[0] as! Int
+            }
             self.manager.socket(forNamespace: "/\(self.category)").connect()
         }.navigationBarBackButtonHidden(true)
     }

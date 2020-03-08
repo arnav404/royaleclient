@@ -24,7 +24,7 @@ struct PopUp: View {
                         .foregroundColor(Color.white)
                     Spacer()
                     HStack {
-                        NavigationLink(destination: Lobby(color: self.bgColor, category: self.category)) {
+                        NavigationLink(destination: RoyaleMotherView(color: self.bgColor, category: self.category)) {
                             Text("Royale Mode").padding(8.0)
                                 .foregroundColor(Color.white)
                                

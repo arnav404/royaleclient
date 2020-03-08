@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		47315B8A2406188E00C1300C /* Lobby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47315B892406188E00C1300C /* Lobby.swift */; };
-		4740524F240864040002374B /* LobbyPlayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4740524E240864040002374B /* LobbyPlayers.swift */; };
+		47215C7B2414B03D004A168B /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47215C762414B03C004A168B /* NavigationController.swift */; };
+		47215C7C2414B03D004A168B /* RoyaleMotherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47215C772414B03C004A168B /* RoyaleMotherView.swift */; };
+		47215C7D2414B03D004A168B /* LobbyPlayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47215C782414B03C004A168B /* LobbyPlayers.swift */; };
+		47215C7E2414B03D004A168B /* RoyaleQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47215C792414B03D004A168B /* RoyaleQuestion.swift */; };
+		47215C7F2414B03D004A168B /* Lobby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47215C7A2414B03D004A168B /* Lobby.swift */; };
+		47215C8124158016004A168B /* StandingsPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47215C8024158016004A168B /* StandingsPopUp.swift */; };
+		47215C8324159BDB004A168B /* ScreenShown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47215C8224159BDB004A168B /* ScreenShown.swift */; };
 		4743B49C23FAF810006D60DA /* OptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4743B49B23FAF810006D60DA /* OptionButton.swift */; };
 		4743B49E23FB01A8006D60DA /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4743B49D23FB01A8006D60DA /* TimerView.swift */; };
 		4743B4A423FB214D006D60DA /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4743B4A323FB214D006D60DA /* HomeScreen.swift */; };
@@ -62,8 +67,13 @@
 
 /* Begin PBXFileReference section */
 		47195D3F240751710083710D /* SocketIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SocketIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		47315B892406188E00C1300C /* Lobby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lobby.swift; sourceTree = "<group>"; };
-		4740524E240864040002374B /* LobbyPlayers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyPlayers.swift; sourceTree = "<group>"; };
+		47215C762414B03C004A168B /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		47215C772414B03C004A168B /* RoyaleMotherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoyaleMotherView.swift; sourceTree = "<group>"; };
+		47215C782414B03C004A168B /* LobbyPlayers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LobbyPlayers.swift; path = ../../../../../.Trash/TriviaRoyale/TriviaRoyale/RoyaleMode/LobbyPlayers.swift; sourceTree = "<group>"; };
+		47215C792414B03D004A168B /* RoyaleQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoyaleQuestion.swift; sourceTree = "<group>"; };
+		47215C7A2414B03D004A168B /* Lobby.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Lobby.swift; path = ../../../../../.Trash/TriviaRoyale/TriviaRoyale/RoyaleMode/Lobby.swift; sourceTree = "<group>"; };
+		47215C8024158016004A168B /* StandingsPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsPopUp.swift; sourceTree = "<group>"; };
+		47215C8224159BDB004A168B /* ScreenShown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenShown.swift; sourceTree = "<group>"; };
 		4743B49B23FAF810006D60DA /* OptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionButton.swift; sourceTree = "<group>"; };
 		4743B49D23FB01A8006D60DA /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		4743B4A323FB214D006D60DA /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
@@ -131,8 +141,13 @@
 		47315B8824060EB100C1300C /* RoyaleMode */ = {
 			isa = PBXGroup;
 			children = (
-				47315B892406188E00C1300C /* Lobby.swift */,
-				4740524E240864040002374B /* LobbyPlayers.swift */,
+				47215C7A2414B03D004A168B /* Lobby.swift */,
+				47215C782414B03C004A168B /* LobbyPlayers.swift */,
+				47215C762414B03C004A168B /* NavigationController.swift */,
+				47215C8224159BDB004A168B /* ScreenShown.swift */,
+				47215C772414B03C004A168B /* RoyaleMotherView.swift */,
+				47215C792414B03D004A168B /* RoyaleQuestion.swift */,
+				47215C8024158016004A168B /* StandingsPopUp.swift */,
 			);
 			path = RoyaleMode;
 			sourceTree = "<group>";
@@ -491,17 +506,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47215C7D2414B03D004A168B /* LobbyPlayers.swift in Sources */,
 				47F7B15A23FA4CD000C37EBE /* AppDelegate.swift in Sources */,
 				4743B4AA23FB8976006D60DA /* Question.swift in Sources */,
+				47215C7E2414B03D004A168B /* RoyaleQuestion.swift in Sources */,
 				47F7B15C23FA4CD000C37EBE /* SceneDelegate.swift in Sources */,
+				47215C7C2414B03D004A168B /* RoyaleMotherView.swift in Sources */,
 				4743B4A423FB214D006D60DA /* HomeScreen.swift in Sources */,
+				47215C7F2414B03D004A168B /* Lobby.swift in Sources */,
 				4743B49C23FAF810006D60DA /* OptionButton.swift in Sources */,
 				4743B4A623FB21B3006D60DA /* CategoryButton.swift in Sources */,
 				47553D9C23FC95D900352B60 /* PopUp.swift in Sources */,
-				47315B8A2406188E00C1300C /* Lobby.swift in Sources */,
+				47215C8324159BDB004A168B /* ScreenShown.swift in Sources */,
+				47215C7B2414B03D004A168B /* NavigationController.swift in Sources */,
 				4743B4AC23FB8A19006D60DA /* NetworkingManager.swift in Sources */,
-				4740524F240864040002374B /* LobbyPlayers.swift in Sources */,
 				4743B49E23FB01A8006D60DA /* TimerView.swift in Sources */,
+				47215C8124158016004A168B /* StandingsPopUp.swift in Sources */,
 				47F7B15E23FA4CD000C37EBE /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
