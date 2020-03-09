@@ -5,7 +5,6 @@
 //  Created by Arnav Thirunagari on 2/25/20.
 //  Copyright © 2020 Arnav Thirunagari. All rights reserved.
 //
-
 import SwiftUI
 import SocketIO
 import Foundation
@@ -16,7 +15,8 @@ struct Lobby: View {
     @State var color = Color.blue
     @State var category = 21
     @ObservedObject var gd = GameData()
-    @State var manager = SocketManager(socketURL: URL(string: "http://localhost:5000")!, config: [.log(true), .compress])
+    @ObservedObject var page = NavigationController()
+    @State var manager = SocketManager(socketURL: URL(string: "https://royale-server.herokuapp.com/")!, config: [.log(true), .compress])
     @State var showsAlert = false
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
@@ -54,9 +54,10 @@ struct Lobby: View {
                 self.gd.ticker = (data[0] as! Array<Any>)[0] as! Int
             }
             self.manager.socket(forNamespace: "/\(self.category)").on("transition") { (data, _) in
-                print("THING: \(data[0])")
-                self.gd.ticker = (data[0] as! Array<Any>)[0] as! Int
-            }
+                self.page.page = "game"
+                self.page.questionData = data[0] as! Array<Dictionary<String, Any>>
+                
+                    as [Any]}
             self.manager.socket(forNamespace: "/\(self.category)").connect()
         }.navigationBarBackButtonHidden(true)
     }
