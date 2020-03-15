@@ -3,18 +3,33 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		47C09B762415F32000AD7869 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C09B752415F32000AD7869 /* AppDelegate.swift */; };
 		47C09B782415F32000AD7869 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C09B772415F32000AD7869 /* SceneDelegate.swift */; };
-		47C09B7A2415F32000AD7869 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C09B792415F32000AD7869 /* ContentView.swift */; };
-		47C09B7C2415F32100AD7869 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47C09B7B2415F32100AD7869 /* Assets.xcassets */; };
 		47C09B7F2415F32100AD7869 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47C09B7E2415F32100AD7869 /* Preview Assets.xcassets */; };
 		47C09B822415F32100AD7869 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47C09B802415F32100AD7869 /* LaunchScreen.storyboard */; };
 		47C09B8D2415F32100AD7869 /* RoyaleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C09B8C2415F32100AD7869 /* RoyaleTests.swift */; };
 		47C09B982415F32100AD7869 /* RoyaleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C09B972415F32100AD7869 /* RoyaleUITests.swift */; };
+		47C09BA72415F33900AD7869 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 47C09BA62415F33900AD7869 /* SocketIO */; };
+		47C09BB72415F3AA00AD7869 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C09BB52415F3AA00AD7869 /* NavigationController.swift */; };
+		47C09BB82415F3AA00AD7869 /* ScreenShown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C09BB02415F3AA00AD7869 /* ScreenShown.swift */; };
+		47C09BB92415F3AA00AD7869 /* Lobby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C09BB42415F3AA00AD7869 /* Lobby.swift */; };
+		47C09BBA2415F3AA00AD7869 /* RoyaleQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C09BB22415F3AA00AD7869 /* RoyaleQuestion.swift */; };
+		47C09BBB2415F3AA00AD7869 /* StandingsPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C09BB62415F3AA00AD7869 /* StandingsPopUp.swift */; };
+		47C09BBC2415F3AA00AD7869 /* RoyaleMotherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C09BB32415F3AA00AD7869 /* RoyaleMotherView.swift */; };
+		47C09BBD2415F3AA00AD7869 /* LobbyPlayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C09BB12415F3AA00AD7869 /* LobbyPlayers.swift */; };
+		47C09BC12415F3B500AD7869 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C09BC02415F3B500AD7869 /* HomeScreen.swift */; };
+		47C09BC22415F3B500AD7869 /* PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C09BBE2415F3B500AD7869 /* PopUp.swift */; };
+		47C09BC32415F3B500AD7869 /* CategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C09BBF2415F3B500AD7869 /* CategoryButton.swift */; };
+		47C09BC92415F3BD00AD7869 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C09BC82415F3BD00AD7869 /* NetworkingManager.swift */; };
+		47C09BCA2415F3BD00AD7869 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C09BC52415F3BD00AD7869 /* Question.swift */; };
+		47C09BCB2415F3BD00AD7869 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C09BC62415F3BD00AD7869 /* TimerView.swift */; };
+		47C09BCC2415F3BD00AD7869 /* OptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C09BC72415F3BD00AD7869 /* OptionButton.swift */; };
+		47C09BCD2415F3BD00AD7869 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C09BC42415F3BD00AD7869 /* ContentView.swift */; };
+		47C09BD22416FEE700AD7869 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47C09BD12416FEE700AD7869 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +53,6 @@
 		47C09B722415F32000AD7869 /* Royale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Royale.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47C09B752415F32000AD7869 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47C09B772415F32000AD7869 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		47C09B792415F32000AD7869 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		47C09B7B2415F32100AD7869 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		47C09B7E2415F32100AD7869 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		47C09B812415F32100AD7869 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		47C09B832415F32100AD7869 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +62,22 @@
 		47C09B932415F32100AD7869 /* RoyaleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoyaleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		47C09B972415F32100AD7869 /* RoyaleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoyaleUITests.swift; sourceTree = "<group>"; };
 		47C09B992415F32100AD7869 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47C09BB02415F3AA00AD7869 /* ScreenShown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenShown.swift; sourceTree = "<group>"; };
+		47C09BB12415F3AA00AD7869 /* LobbyPlayers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyPlayers.swift; sourceTree = "<group>"; };
+		47C09BB22415F3AA00AD7869 /* RoyaleQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoyaleQuestion.swift; sourceTree = "<group>"; };
+		47C09BB32415F3AA00AD7869 /* RoyaleMotherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoyaleMotherView.swift; sourceTree = "<group>"; };
+		47C09BB42415F3AA00AD7869 /* Lobby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lobby.swift; sourceTree = "<group>"; };
+		47C09BB52415F3AA00AD7869 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		47C09BB62415F3AA00AD7869 /* StandingsPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsPopUp.swift; sourceTree = "<group>"; };
+		47C09BBE2415F3B500AD7869 /* PopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp.swift; sourceTree = "<group>"; };
+		47C09BBF2415F3B500AD7869 /* CategoryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButton.swift; sourceTree = "<group>"; };
+		47C09BC02415F3B500AD7869 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		47C09BC42415F3BD00AD7869 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		47C09BC52415F3BD00AD7869 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		47C09BC62415F3BD00AD7869 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		47C09BC72415F3BD00AD7869 /* OptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionButton.swift; sourceTree = "<group>"; };
+		47C09BC82415F3BD00AD7869 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		47C09BD12416FEE700AD7869 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47C09BA72415F33900AD7869 /* SocketIO in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,9 +130,11 @@
 			isa = PBXGroup;
 			children = (
 				47C09B752415F32000AD7869 /* AppDelegate.swift */,
+				47C09BD02416FE9100AD7869 /* RoyaleMode */,
+				47C09BCF2416FE8900AD7869 /* GameScreen */,
+				47C09BCE2416FE7600AD7869 /* HomeScreen */,
 				47C09B772415F32000AD7869 /* SceneDelegate.swift */,
-				47C09B792415F32000AD7869 /* ContentView.swift */,
-				47C09B7B2415F32100AD7869 /* Assets.xcassets */,
+				47C09BD12416FEE700AD7869 /* Assets.xcassets */,
 				47C09B802415F32100AD7869 /* LaunchScreen.storyboard */,
 				47C09B832415F32100AD7869 /* Info.plist */,
 				47C09B7D2415F32100AD7869 /* Preview Content */,
@@ -136,6 +168,42 @@
 			path = RoyaleUITests;
 			sourceTree = "<group>";
 		};
+		47C09BCE2416FE7600AD7869 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				47C09BBF2415F3B500AD7869 /* CategoryButton.swift */,
+				47C09BC02415F3B500AD7869 /* HomeScreen.swift */,
+				47C09BBE2415F3B500AD7869 /* PopUp.swift */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		47C09BCF2416FE8900AD7869 /* GameScreen */ = {
+			isa = PBXGroup;
+			children = (
+				47C09BC42415F3BD00AD7869 /* ContentView.swift */,
+				47C09BC82415F3BD00AD7869 /* NetworkingManager.swift */,
+				47C09BC72415F3BD00AD7869 /* OptionButton.swift */,
+				47C09BC52415F3BD00AD7869 /* Question.swift */,
+				47C09BC62415F3BD00AD7869 /* TimerView.swift */,
+			);
+			path = GameScreen;
+			sourceTree = "<group>";
+		};
+		47C09BD02416FE9100AD7869 /* RoyaleMode */ = {
+			isa = PBXGroup;
+			children = (
+				47C09BB42415F3AA00AD7869 /* Lobby.swift */,
+				47C09BB12415F3AA00AD7869 /* LobbyPlayers.swift */,
+				47C09BB52415F3AA00AD7869 /* NavigationController.swift */,
+				47C09BB32415F3AA00AD7869 /* RoyaleMotherView.swift */,
+				47C09BB22415F3AA00AD7869 /* RoyaleQuestion.swift */,
+				47C09BB02415F3AA00AD7869 /* ScreenShown.swift */,
+				47C09BB62415F3AA00AD7869 /* StandingsPopUp.swift */,
+			);
+			path = RoyaleMode;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,6 +220,9 @@
 			dependencies = (
 			);
 			name = Royale;
+			packageProductDependencies = (
+				47C09BA62415F33900AD7869 /* SocketIO */,
+			);
 			productName = Royale;
 			productReference = 47C09B722415F32000AD7869 /* Royale.app */;
 			productType = "com.apple.product-type.application";
@@ -224,6 +295,9 @@
 				Base,
 			);
 			mainGroup = 47C09B692415F32000AD7869;
+			packageReferences = (
+				47C09BA52415F33900AD7869 /* XCRemoteSwiftPackageReference "socket" */,
+			);
 			productRefGroup = 47C09B732415F32000AD7869 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -242,7 +316,7 @@
 			files = (
 				47C09B822415F32100AD7869 /* LaunchScreen.storyboard in Resources */,
 				47C09B7F2415F32100AD7869 /* Preview Assets.xcassets in Resources */,
-				47C09B7C2415F32100AD7869 /* Assets.xcassets in Resources */,
+				47C09BD22416FEE700AD7869 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,9 +341,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47C09BCB2415F3BD00AD7869 /* TimerView.swift in Sources */,
 				47C09B762415F32000AD7869 /* AppDelegate.swift in Sources */,
+				47C09BCC2415F3BD00AD7869 /* OptionButton.swift in Sources */,
+				47C09BB92415F3AA00AD7869 /* Lobby.swift in Sources */,
+				47C09BC22415F3B500AD7869 /* PopUp.swift in Sources */,
+				47C09BB72415F3AA00AD7869 /* NavigationController.swift in Sources */,
+				47C09BBA2415F3AA00AD7869 /* RoyaleQuestion.swift in Sources */,
+				47C09BCD2415F3BD00AD7869 /* ContentView.swift in Sources */,
+				47C09BCA2415F3BD00AD7869 /* Question.swift in Sources */,
+				47C09BBB2415F3AA00AD7869 /* StandingsPopUp.swift in Sources */,
 				47C09B782415F32000AD7869 /* SceneDelegate.swift in Sources */,
-				47C09B7A2415F32000AD7869 /* ContentView.swift in Sources */,
+				47C09BC12415F3B500AD7869 /* HomeScreen.swift in Sources */,
+				47C09BC92415F3BD00AD7869 /* NetworkingManager.swift in Sources */,
+				47C09BBD2415F3AA00AD7869 /* LobbyPlayers.swift in Sources */,
+				47C09BC32415F3B500AD7869 /* CategoryButton.swift in Sources */,
+				47C09BB82415F3AA00AD7869 /* ScreenShown.swift in Sources */,
+				47C09BBC2415F3AA00AD7869 /* RoyaleMotherView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,7 +534,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = arnav404.Royale;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -466,7 +554,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = arnav404.Royale;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -594,6 +682,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		47C09BA52415F33900AD7869 /* XCRemoteSwiftPackageReference "socket" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/socketio/socket.io-client-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		47C09BA62415F33900AD7869 /* SocketIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 47C09BA52415F33900AD7869 /* XCRemoteSwiftPackageReference "socket" */;
+			productName = SocketIO;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 47C09B6A2415F32000AD7869 /* Project object */;
 }
